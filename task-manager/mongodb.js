@@ -12,8 +12,18 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
     console.log("Connect susessfull!!!!");
     const db = client.db(databaseName);
-    db.collection('users').insertOne({
-        name: 'DucLe',
-        age: 26
-    })
+    db.collection('tasks').insertMany([
+        {
+            task: 'task1',
+            description: "this is task 1"
+        },
+        {
+            task: 'task2',
+            description: "this is task 2"
+        },
+        {
+            task: 'task3',
+            description: "this is task 3"
+        },
+    ])
 })
