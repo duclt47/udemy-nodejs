@@ -1,22 +1,21 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/task-manager-api');
-const validator = require('validator');
 
-const Task = mongoose.model('Task', {
-    description: {
-        type: String,
-        trim: true,
-        require: true
-    },
-    completed: {
-        type: Boolean,
-        default: false
-    }
-});
+// const Task = mongoose.model('Task', {
+//     description: {
+//         type: String,
+//         trim: true,
+//         require: true
+//     },
+//     completed: {
+//         type: Boolean,
+//         default: false
+//     }
+// });
 
-const task = new Task({
-    description: 'B hoc mongoDB',
-})
+// const task = new Task({
+//     description: 'B hoc mongoDB',
+// })
 
 // const User = mongoose.model('User', {
 //     name: {
@@ -56,8 +55,8 @@ const task = new Task({
 //     password: '123456'
 // })
 
-task.save().then(() => console.log("saved task:", task))
-    .catch((err) => console.error(err))
+// task.save().then(() => console.log("saved task:", task))
+//     .catch((err) => console.error(err))
 
 // user.save().then(() => console.log("added new user:", user))
 //     .catch((err) => console.error(err))
